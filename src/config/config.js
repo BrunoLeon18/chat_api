@@ -25,8 +25,6 @@ module.exports = {
     port: process.env.DB_PORT,
     dialect: "postgres",
     logging: false, // no quiero que sequelize haga console.logs
-    ...process.env.NODE_ENV === "production"
-    ?{dialectOptions:{ssl:{required:true, rejectUnauthorized:false}}}
-    : {}
-  }
+    dialectOptions:{ssl:{required:true, rejectUnauthorized:false}}
+  },
 }
